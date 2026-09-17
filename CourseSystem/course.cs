@@ -37,4 +37,32 @@ public class Course
             student.Courses.Add(this);
         }
     }
+    public void Remove(Student student)
+    {
+        // Remove kraschar inte om studenten saknas
+        if (Students.Remove(student))
+        {
+            // Uppdatera även studentens sida
+            student.Courses.Remove(this);
+        }
+    }
+
+    public void RollCall()
+    {
+        Console.WriteLine($"Studerande i {Name}:");
+
+        foreach (Student student in Students)
+        {
+            Console.WriteLine($"- {student}");
+        }
+    }
+
+    public override string ToString()
+    {
+        return $"{Name} ({Students.Count}/{MaxSeats} platser)";
+    }
+}
+
+
+
 
