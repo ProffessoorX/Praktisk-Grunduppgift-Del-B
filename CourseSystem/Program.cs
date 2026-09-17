@@ -25,3 +25,34 @@ Console.WriteLine();
 math.RollCall();
 
 Console.WriteLine();
+
+// Add courses from both ways
+anna.Join(programming);
+programming.Enroll(sara);
+
+anna.Schedule();
+
+Console.WriteLine();
+
+// Anna leaves math from students side
+anna.Leave(math);
+
+math.RollCall();
+
+Console.WriteLine();
+anna.Schedule();
+
+Console.WriteLine();
+
+// there is a free spot in math
+sara.Join(math);
+
+math.RollCall();
+
+Console.WriteLine();
+sara.Schedule();
+
+// Will not crash
+// Sara is not in programming after this 
+sara.Leave(programming);
+sara.Leave(programming);
