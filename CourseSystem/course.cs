@@ -13,7 +13,6 @@ public class Course
     }
 
     public void Enroll(Student student)
-    public void Enroll(Student student)
     {
         // No doubble registration
         if (Students.Contains(student))
@@ -57,10 +56,7 @@ public class Course
         }
     }
 
-    public override string ToString()
-    {
-        return $"{Name} ({Students.Count}/{MaxSeats} platser)";
-    }
+    public override string ToString() => $"{Name} ({Students.Count}/{MaxSeats} platser)";
 }
 
 
